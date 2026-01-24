@@ -10,7 +10,7 @@ const generatePhrases = (count: number, filePrefix: string, displayName: string,
     const index = i + 1;
     const separator = useDot ? '.' : '';
     const fileName = `${filePrefix}${separator}${index}.jpeg`;
-    
+
     return {
       id: `${filePrefix}-${index}`,
       name: `${displayName} ${index}`,
@@ -33,7 +33,7 @@ export const DATA: Category[] = [
         id: 'rf-combined',
         name: 'Combined Variables',
         // Updated to use dot separator to match file convention: rockcombined.1.jpeg
-        phrases: generatePhrases(10, 'rockcombined', 'Rock Combined', true),
+        phrases: generatePhrases(10, 'rockcombined', 'Rock Combined', false),
       },
     ],
   },
