@@ -93,12 +93,12 @@ export const DATA: Category[] = [
       {
         id: 'swing-comb1',
         name: 'Combined Variables #1',
-        phrases: generatePhrases('swingcombined1', 'Swing Comb 1', true),
+        phrases: generatePhrases('swingcombined1', 'Swing Combined #1', true),
       },
       {
         id: 'swing-comb2',
         name: 'Combined Variables #2',
-        phrases: generatePhrases('swingcombined2', 'Swing Comb 2', true),
+        phrases: generatePhrases('swingcombined2', 'Swing Combined #2', true),
       },
     ],
   },
