@@ -181,6 +181,33 @@ function App() {
     setCurrentBarCount(0);
   };
 
+  const handleNextPhrase = useCallback(() => {
+    const length = currentSubCategory.phrases.length;
+    const nextIndex = (currentPhraseIndex + 1) % length;
+    handlePhraseSelect(nextIndex);
+  }, [currentPhraseIndex, currentSubCategory, handlePhraseSelect]);
+
+  const handlePrevPhrase = useCallback(() => {
+    const length = currentSubCategory.phrases.length;
+    const prevIndex = (currentPhraseIndex - 1 + length) % length;
+    handlePhraseSelect(prevIndex);
+  }, [currentPhraseIndex, currentSubCategory, handlePhraseSelect]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (currentView !== 'APP') return;
+
+      if (e.key === 'ArrowRight') {
+        handleNextPhrase();
+      } else if (e.key === 'ArrowLeft') {
+        handlePrevPhrase();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [currentView, handleNextPhrase, handlePrevPhrase]);
+
   const toggleShuffle = () => {
     setIsShuffle(!isShuffle);
     if (playState === PlayState.STOPPED) {
@@ -258,8 +285,8 @@ function App() {
                 <button
                   onClick={togglePlay}
                   className={`flex items-center justify-center gap-2 px-4 py-2 rounded-lg shadow-lg backdrop-blur-md border transition-all active:scale-95 group ${isPlaying
-                      ? 'bg-red-500/20 border-red-500/50 hover:bg-red-500/30 text-red-100'
-                      : 'bg-green-500/20 border-green-500/50 hover:bg-green-500/30 text-green-100'
+                    ? 'bg-red-500/20 border-red-500/50 hover:bg-red-500/30 text-red-100'
+                    : 'bg-green-500/20 border-green-500/50 hover:bg-green-500/30 text-green-100'
                     }`}
                 >
                   <div className={`p-1 rounded-full ${isPlaying ? 'bg-red-500 text-white' : 'bg-green-500 text-white'}`}>
