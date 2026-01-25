@@ -11,7 +11,7 @@ import { audioEngine, BackingStyle } from './services/audioEngine';
 
 function App() {
   // --- State ---
-  const [isSidebarOpen, setSidebarOpen] = useState(true);
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [isControlsOpen, setControlsOpen] = useState(true);
 
   // Navigation State

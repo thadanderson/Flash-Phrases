@@ -45,7 +45,7 @@ const generatePhrases = (filePrefix: string, displayName: string, useDot: boolea
 
       return {
         id: `${filePrefix}-${index}`,
-        name: `${displayName} ${index}`,
+        name: `${displayName}`,
         imageUrl: fileName, // just the filename, app adds prefix path
         index, // temporary for sorting
       };

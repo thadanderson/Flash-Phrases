@@ -15,13 +15,13 @@ interface SidebarProps {
   onClose: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ 
-  currentSubCategory, 
-  onSelectSubCategory, 
+const Sidebar: React.FC<SidebarProps> = ({
+  currentSubCategory,
+  onSelectSubCategory,
   currentView,
   onSelectView,
-  isOpen, 
-  onClose 
+  isOpen,
+  onClose
 }) => {
 
   const handleLinkClick = (action: () => void) => {
@@ -34,13 +34,13 @@ const Sidebar: React.FC<SidebarProps> = ({
   return (
     <>
       {/* Mobile Overlay */}
-      <div 
+      <div
         className={`fixed inset-0 bg-black/50 z-20 md:hidden transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         onClick={onClose}
       />
 
       {/* Sidebar Content */}
-      <aside 
+      <aside
         className={`
           fixed md:relative top-0 left-0 h-full bg-gray-900 border-r border-gray-800 z-30 
           transform transition-all duration-300 ease-in-out flex flex-col
@@ -48,7 +48,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         `}
       >
         <div className="flex items-center justify-between p-4 border-b border-gray-800 min-w-[16rem]">
-          <div 
+          <div
             className="flex items-center gap-3 font-bold text-xl text-indigo-400 cursor-pointer group"
             onClick={() => handleLinkClick(() => onSelectView('HOME'))}
           >
@@ -56,14 +56,14 @@ const Sidebar: React.FC<SidebarProps> = ({
             <span className="group-hover:text-indigo-300 transition-colors">Flash Phrases</span>
           </div>
           <button onClick={onClose} className="text-gray-400 hover:text-white">
-             {/* Show X on mobile, ChevronLeft on desktop */}
+            {/* Show X on mobile, ChevronLeft on desktop */}
             <X className="w-6 h-6 md:hidden" />
             <ChevronLeft className="w-6 h-6 hidden md:block" />
           </button>
         </div>
 
         <nav className="flex-1 overflow-y-auto p-4 min-w-[16rem]">
-          
+
           {/* Information Section */}
           <div className="mb-6 border-b border-gray-800 pb-6">
             <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-2">
@@ -73,11 +73,10 @@ const Sidebar: React.FC<SidebarProps> = ({
               <li>
                 <button
                   onClick={() => handleLinkClick(() => onSelectView('HOME'))}
-                  className={`w-full flex items-center gap-3 px-2 py-2 text-sm font-medium rounded-md transition-colors ${
-                    currentView === 'HOME'
+                  className={`w-full flex items-center gap-3 px-2 py-2 text-sm font-medium rounded-md transition-colors ${currentView === 'HOME'
                       ? 'bg-gray-800 text-white border border-gray-700'
                       : 'text-gray-300 hover:bg-gray-800 hover:text-white'
-                  }`}
+                    }`}
                 >
                   <Home className="w-4 h-4" />
                   <span>Home</span>
@@ -86,11 +85,10 @@ const Sidebar: React.FC<SidebarProps> = ({
               <li>
                 <button
                   onClick={() => handleLinkClick(() => onSelectView('GUIDE'))}
-                  className={`w-full flex items-center gap-3 px-2 py-2 text-sm font-medium rounded-md transition-colors ${
-                    currentView === 'GUIDE'
+                  className={`w-full flex items-center gap-3 px-2 py-2 text-sm font-medium rounded-md transition-colors ${currentView === 'GUIDE'
                       ? 'bg-gray-800 text-white border border-gray-700'
                       : 'text-gray-300 hover:bg-gray-800 hover:text-white'
-                  }`}
+                    }`}
                 >
                   <Info className="w-4 h-4" />
                   <span>Guide</span>
@@ -99,11 +97,10 @@ const Sidebar: React.FC<SidebarProps> = ({
               <li>
                 <button
                   onClick={() => handleLinkClick(() => onSelectView('SOURCES'))}
-                  className={`w-full flex items-center gap-3 px-2 py-2 text-sm font-medium rounded-md transition-colors ${
-                    currentView === 'SOURCES'
+                  className={`w-full flex items-center gap-3 px-2 py-2 text-sm font-medium rounded-md transition-colors ${currentView === 'SOURCES'
                       ? 'bg-gray-800 text-white border border-gray-700'
                       : 'text-gray-300 hover:bg-gray-800 hover:text-white'
-                  }`}
+                    }`}
                 >
                   <BookOpen className="w-4 h-4" />
                   <span>Sources</span>
@@ -127,11 +124,10 @@ const Sidebar: React.FC<SidebarProps> = ({
                         onClick={() => handleLinkClick(() => {
                           onSelectSubCategory(sub);
                         })}
-                        className={`w-full flex items-center gap-3 px-2 py-2 text-sm font-medium rounded-md transition-colors ${
-                          isActive
+                        className={`w-full flex items-center gap-3 px-2 py-2 text-sm font-medium rounded-md transition-colors ${isActive
                             ? 'bg-indigo-600 text-white'
                             : 'text-gray-300 hover:bg-gray-800 hover:text-white'
-                        }`}
+                          }`}
                       >
                         <ListMusic className="w-4 h-4" />
                         <span className="text-left">{sub.name}</span>
@@ -149,7 +145,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           <p className="mb-1">
             Created by <a href="https://thadanderson.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-400 transition-colors">Thad Anderson</a>
           </p>
-          <p>Copyright © 2025</p>
+          <p>Copyright © 2026</p>
           <p>All Rights Reserved</p>
         </div>
       </aside>
