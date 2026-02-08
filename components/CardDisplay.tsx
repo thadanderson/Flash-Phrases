@@ -50,7 +50,7 @@ const CardDisplay: React.FC<CardDisplayProps> = ({
     <div className="flex-1 flex flex-col md:flex-row items-center justify-center gap-6 p-4 md:p-8 w-full h-full">
 
       {/* Current Card */}
-      <div className="relative w-full md:flex-1 aspect-video bg-gray-800 rounded-xl shadow-2xl border-2 border-indigo-500 overflow-hidden flex flex-col max-h-full transition-all duration-300 ease-in-out">
+      <div className="relative w-full md:flex-1 aspect-video bg-gray-800 rounded-xl shadow-2xl border-2 border-indigo-500 overflow-hidden flex flex-col max-h-full md:max-h-[60vh] transition-all duration-300 ease-in-out">
         <div className="absolute top-0 left-0 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-br-lg z-10">
           Current
         </div>

@@ -229,7 +229,7 @@ function App() {
   };
 
   return (
-    <div className="flex h-screen bg-gray-900 text-white font-sans overflow-hidden">
+    <div className="flex min-h-[100dvh] bg-gray-900 text-white font-sans overflow-hidden">
       <Sidebar
         currentSubCategory={currentSubCategory}
         onSelectSubCategory={handleSubCategorySelect}
