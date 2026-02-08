@@ -40,7 +40,7 @@ const Controls: React.FC<ControlsProps> = ({
   const labelClass = "text-[10px] text-gray-500 uppercase font-bold tracking-wider flex items-center gap-1.5 mb-1";
 
   return (
-    <div className="bg-gray-800 border-t border-gray-700 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.3)] z-20 flex flex-col transition-all duration-300 pb-[env(safe-area-inset-bottom)] mb-4">
+    <div className="flex-none bg-gray-800 border-t border-gray-700 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.3)] z-20 flex flex-col transition-all duration-300 pb-[env(safe-area-inset-bottom)] mb-4">
 
       <div className="w-full flex items-center justify-between px-4 p-1 border-b border-gray-700/50">
         <button
@@ -102,8 +102,8 @@ const Controls: React.FC<ControlsProps> = ({
                 <button
                   onClick={toggleBackingTrack}
                   className={`w-full py-2 px-3 rounded-md font-bold text-xs flex items-center justify-between transition-all ${isBackingTrack
-                      ? 'bg-indigo-900/30 border border-indigo-500/50 text-indigo-300'
-                      : 'bg-gray-800 border border-gray-700 text-gray-400 hover:border-gray-600'
+                    ? 'bg-indigo-900/30 border border-indigo-500/50 text-indigo-300'
+                    : 'bg-gray-800 border border-gray-700 text-gray-400 hover:border-gray-600'
                     }`}
                 >
                   <span>{isBackingTrack ? 'Band On' : 'Band Off'}</span>
@@ -124,8 +124,8 @@ const Controls: React.FC<ControlsProps> = ({
                     key={opt}
                     onClick={() => setRepetition(opt as RepetitionOption)}
                     className={`flex flex-col items-center justify-center py-1.5 rounded transition-all ${repetition === opt
-                        ? 'bg-indigo-600 text-white font-bold shadow-md ring-1 ring-indigo-400'
-                        : 'bg-gray-800 text-gray-400 hover:bg-gray-700 border border-gray-700/50'
+                      ? 'bg-indigo-600 text-white font-bold shadow-md ring-1 ring-indigo-400'
+                      : 'bg-gray-800 text-gray-400 hover:bg-gray-700 border border-gray-700/50'
                       }`}
                   >
                     <span className="text-lg leading-none">{opt}</span>
@@ -143,8 +143,8 @@ const Controls: React.FC<ControlsProps> = ({
                 <button
                   onClick={toggleShuffle}
                   className={`w-full py-2 px-3 rounded-md font-bold text-xs flex items-center justify-between transition-all group ${isShuffle
-                      ? 'bg-indigo-900/30 border border-indigo-500/50 text-indigo-300'
-                      : 'bg-gray-800 border border-gray-700 text-gray-400 hover:border-gray-600'
+                    ? 'bg-indigo-900/30 border border-indigo-500/50 text-indigo-300'
+                    : 'bg-gray-800 border border-gray-700 text-gray-400 hover:border-gray-600'
                     }`}
                 >
                   <span>{isShuffle ? 'Random' : 'Linear'}</span>
